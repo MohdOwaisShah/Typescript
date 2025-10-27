@@ -1,0 +1,31 @@
+*1. typescript is an advance version of javascript*
+TS default behavior: we can write the js code no matter it is not good according to typescript but it will convert it to javascript like using var we can redeclar a variable, this is not good according to typescript but it will run the code.
+
+javascript made in 10 days thats why there is some problems:
+
+- redeclaration the same variable
+var a = 10
+var a = 12
+this will show error in another language
+2nd example: 
+this is also works in js
+var a = 10
+a = 'owais'
+
+etc..
+
+In typescript it is providing a layer in js like its advance version where these types of things is not working and TS also provides more features.
+
+
+*2. data types*
+
+1. premitive
+2. non-premitive
+
+3. refrence - [](){}
+note: every three bracets are refrence that effects on parent 
+example: 
+  let a = [1,2,3,4,5];
+  let b = a;
+  b.pop() // this will effect on variable (a) too.
+  console.log(a, b)
