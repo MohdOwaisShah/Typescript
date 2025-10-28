@@ -9,3 +9,21 @@ console.log("isActive ",isActive)
 console.log("anything ",anything)
 console.log("unknownValue ",unknownValue)
 console.log("Hello world")
+
+// Tuples
+let arr: [string, number] = ["owais", 12.4];
+
+// Enum
+enum UserRoles {
+    ADMIN = "admin",
+    GUEST = "guest",
+    SUPER_ADMIN = "super_admin"
+}
+
+UserRoles.ADMIN
+
+// Any
+let a: any;
+a = "hello";
+a = 123;
+a = { name: "Alice" }

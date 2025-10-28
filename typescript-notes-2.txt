@@ -4,15 +4,6 @@
 2 - run the code [ tsc fileName.ts ] for each time OR use [ tsc --watch ] for automatically compile
 
 
-**Basic Types**
-=> Each data has its types.
-- Primitive types
-- Arrays
-- Tuples
-- Enums
-- Any, Unknown, Void, Null, Undefined, Never
-
-
 *Primitive & refrence
 Primitive - string, number, boolean etc
 
@@ -25,4 +16,122 @@ newArr.pop()
 console.log(arr)
 console.log(newArr)
 
-note: difference between them is in Primitive we can copy the variable directly but not in refrence like in () {} [] we are not copying the value we are giving the refrence just like in the example we saw that when we are changing the newArr it is reflecting on arr.
+note: difference between them is in Primitive we can copy the variable directly but not in refrence Example in () {} [] we are not copying the value we are giving the refrence just Example in the example we saw that when we are changing the newArr it is reflecting on arr.
+
+
+**Basic Types**
+=> Each data has its types.
+- Primitive types
+- Arrays
+- Tuples
+- Enums
+- Any, Unknown, Void, Null, Undefined, Never
+- Type Inference
+- Type Annotations
+
+
+- Primitive types - number, string, boolean etc
+// Example: 
+let num = 123456;
+
+
+- Arrays
+In arrays we can store multiple types of data
+// Example:
+let arr = [1234, "owais", true];
+
+
+- Tuples
+In tuples we are setting fixed data types
+// Example: 
+let arr: [string, number] = ["owais", 12.4];
+
+
+- Enums
+Enums stands for Enumerations, this make code readable and maintainable we dont want to write the fixed data value.
+// Example: 
+enum UserRoles {
+    ADMIN = "admin",
+    GUEST = "guest",
+    SUPER_ADMIN = "super_admin"
+}
+
+UserRoles.ADMIN
+
+
+- Any 
+When you declare a variable with the any type, you can assign it values of different types (e.g., string, number, boolean, object) without TypeScript raising a type error, means when we can assign whatever value we want in any type and typescript will not showing any error this is not good practice.
+note: basically in any type typescript will be off.
+// Example:
+let a: any;
+a = 1234
+a = "owais"
+
+let aCaps = a.toUpperCase() // it will make capital
+console.log(aCaps)
+
+- Unknown
+In Unkown if we want to use the value then we have to add the type condition otherwise it is showing an run time error.
+// Example: 
+let a: unknown;
+a = 1234
+a = "owais"
+
+// After using typeof we will only work with a variable not directly in any is called *(type narrowing)*
+if(typeof a === "string") {
+    let aCaps = a.toUpperCase()
+    console.log(aCaps)
+}
+
+
+- Void
+Void type is not return a value
+// Example:
+function helloMessage (): void {
+    console.log("Hello World")
+}
+helloMessage()
+
+
+- Null
+Null means a variable that dont have value
+// Example:
+if you wrote let a = null; it is also any but if you want to write null then use :null
+let a: null;
+
+a = "hello" // this will show typescript error for any future value we have to assign the type before like :
+let a: string | null;
+a = "owais" // now it will perfectly works
+
+
+- Undefined
+means variable not defined
+// Example:
+let a: undefined
+
+
+- Never
+when we want to stop the infinite loop then we are using never type
+// Example: 
+
+function absc(): never {
+    while(true){}
+}
+
+abcd();
+console.log("hello") // this will not working
+
+
+- Type Inference
+Type Inference is an ability of typescript compiler that understand the type of variable
+// Example:
+let name = "owais" // typescipt automatically understand that this is string
+
+
+- Type annotations
+Type annotations is that when we are declaring a variable with fixed type
+// Example:
+let a: string;
+
+// functions annotation:
+function abcd(a: string, b: number): void{ }
