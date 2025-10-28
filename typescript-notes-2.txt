@@ -2,3 +2,27 @@
 1 - create the ts fileusing (.ts) extension
 2 - generate the typescript config file using [ tsc --init ]
 2 - run the code [ tsc fileName.ts ] for each time OR use [ tsc --watch ] for automatically compile
+
+
+**Basic Types**
+=> Each data has its types.
+- Primitive types
+- Arrays
+- Tuples
+- Enums
+- Any, Unknown, Void, Null, Undefined, Never
+
+
+*Primitive & refrence
+Primitive - string, number, boolean etc
+
+refrence - [] {} ()
+
+Example :
+let arr = [1,2,3,4,5]
+let newArr = arr
+newArr.pop()
+console.log(arr)
+console.log(newArr)
+
+note: difference between them is in Primitive we can copy the variable directly but not in refrence like in () {} [] we are not copying the value we are giving the refrence just like in the example we saw that when we are changing the newArr it is reflecting on arr.
