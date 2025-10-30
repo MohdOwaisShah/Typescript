@@ -1,7 +1,7 @@
 **How to create ts project**
-1 - create the ts fileusing (.ts) extension
+1 - create the ts file using (.ts) extension
 2 - generate the typescript config file using [ tsc --init ]
-2 - run the code [ tsc fileName.ts ] for each time OR use [ tsc --watch ] for automatically compile
+2 - run the code [ tsc fileName.ts ] for each time OR use [ tsc filenName.ts --watch ] for automatically compile
 
 
 *Primitive & refrence
@@ -16,7 +16,7 @@ newArr.pop()
 console.log(arr)
 console.log(newArr)
 
-note: difference between them is in Primitive we can copy the variable directly but not in refrence Example in () {} [] we are not copying the value we are giving the refrence just Example in the example we saw that when we are changing the newArr it is reflecting on arr.
+note: difference between them is in Primitive we can copy the variable directly but not in refrence Example in () {} [] we are not copying the value we are giving the refrence just in the example we saw that when we are changing the newArr it is reflecting on arr.
 
 
 **Basic Types**
@@ -42,7 +42,7 @@ let arr = [1234, "owais", true];
 
 
 - Tuples
-In tuples we are setting fixed data types
+In tuples we are setting fixed data types in array
 // Example: 
 let arr: [string, number] = ["owais", 12.4];
 

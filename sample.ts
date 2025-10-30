@@ -27,3 +27,5 @@ let a: any;
 a = "hello";
 a = 123;
 a = { name: "Alice" }
+
+

@@ -1,0 +1,112 @@
+- Interfaces & Type Aliases 
+- Defining interfaces
+- Using interfaces to define object shapes
+- Extending interfaces
+- Type aliases
+- Intersection types
+
+
+-* Interfaces
+
+// Example: 
+In function when we are passing any type of data or value like string or number then we are using string type or any other data type directly like that:
+function hello(a: string, b: number){}
+but if we want to pass object then we don't have any data type for object in this time interface comes in using interface keyword we can make interface like object which is the property same as the object and directly pass it in function as type. (it is little bit similar to mongodb model)
+
+- Defining interfaces
+//we created interface which is similar to the our object or user data
+interface User {
+  name: string,
+  email: string,
+  password?: string // using ? it tells if this value are available it works if not it will also works
+}
+
+- Using interfaces to define object shapes
+function userData(obj:User){
+  console.log(obj.name)
+}
+
+userData({name:"owais", email:"owaisshah@gmail.com", password: "123345"})
+
+
+- Extending interfaces
+In Extending interface we are adding two interfaces thats why we can access both interfa values
+
+interface User {
+  name: string,
+  email: string,
+  password: string
+}
+
+interface Admin extends User {
+  admin: string
+}
+
+function userData(obj: Admin){
+  console.log(obj.name)
+  console.log(obj.email)
+  console.log(obj.password)
+  console.log(obj.admin)
+  // we can acces the both interfaces values
+}
+
+
+*Note: If we are creating two interfaces with the same name with different data and if we are using it in object type then we are accessing both value, means if we are created two interface with same name both will merge.
+
+// Example:
+interface Abcd {
+    name: string,
+}
+
+interface Abcd {
+    email: string,
+}
+
+function example(obj: Abcd){
+    console.log(obj.name)
+    console.log(obj.email)
+}
+
+
+- Type aliases
+Type aliases use to create our own type
+// Example:
+type Num = number
+let age: Num = 20
+// used in
+type MultiType = number | string
+let email: MultiType = owais1234@gmail.com
+
+note: ( | ) this symbol is called union
+
+
+
+- Intersection types
+Intersection types allows to combine two types into a single type using ( & ) symbol
+
+// Example: 
+type User = {
+  name: string,
+  email: string
+}
+
+type Admin = User & {
+  getDetails(user: string):void
+}
+
+function example(obj:Admin){
+  console.log(obj.name)
+  console.log(obj.email)
+  console.log(obj.getDetails)
+}
+
+
+*difference between interface & Intersection type
+we saw that intersection type and interface is look same
+1:
+we cannot write same type name as we wrote in interface
+// Example:
+type a = number 
+type a = number // this will not working
+but in interface we can do this and interface merge them
+note: Interface makes object face and intersection type makes type
